@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
+import axios from 'axios'
 
 
 export default class MapContainer extends Component {
@@ -9,16 +10,21 @@ export default class MapContainer extends Component {
   // ======================
   state = {
     locations: [
-      { name: "New York County Supreme Court", location: {lat: 40.7143033, lng: -74.0036919} },
-      { name: "Queens County Supreme Court", location: {lat: 40.7046946, lng: -73.8091145} },
-      { name: "Kings County Supreme Court", location: {lat: 40.6940226, lng: -73.9890967} },
-      { name: "Richmond County Supreme Court", location: {lat: 40.6412336, lng: -74.0768597} },
-      { name: "Bronx Supreme Court", location: {lat: 40.8262388, lng: -73.9235238} }
+      { name: 'test', location: {lat: 40.7485722, lng: -74.0068633 } },
     ]
   }
+ 
+
+  
 
   componentDidUpdate() {
+    this.handleClick ();
     this.loadMap(); // call loadMap function to load the google map
+  }
+
+  handleClick () {
+    axios.get('http://localhost:3001/tweets')//.then(response => console.log(response.data[0].tweetLon))
+         .then(response => this.setState({locations: [{name: response.data[0].tweetID, location: {lat: response.data[0].tweetLat, lng: response.data[0].tweetLon}}]}))
   }
 
   loadMap() {
@@ -42,7 +48,7 @@ export default class MapContainer extends Component {
   // ==================
       this.state.locations.forEach( location => { // iterate through locations saved in state
         const marker = new google.maps.Marker({ // creates a new Google maps Marker object.
-          position: {lat: location.location.lat, lng: location.location.lng}, // sets position of marker to specified location
+          position: {lat: parseFloat(location.location.lat), lng: parseFloat(location.location.lng)}, // sets position of marker to specified location
           map: this.map, // sets markers to appear on the map we just created on line 35
           title: location.name // the title of the marker is set to the name of the location
         });
