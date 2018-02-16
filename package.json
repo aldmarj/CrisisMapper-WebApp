@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://gitlab.com/PRCO304-CrisisMapper/WebApp/issues"
   },
-  "homepage": "https://gitlab.com/PRCO304-CrisisMapper/WebApp#README"
+  "homepage": "https://gitlab.com/PRCO304-CrisisMapper/WebApp#README",
+  "dependencies": {}
 }
