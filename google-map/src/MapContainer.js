@@ -18,7 +18,7 @@ export default class MapContainer extends Component {
   
 
   componentDidUpdate() {
-    this.handleClick ();
+    //this.handleClick ();
     this.loadMap(); // call loadMap function to load the google map
   }
 
@@ -69,4 +69,10 @@ export default class MapContainer extends Component {
       </div>
     )
   }
+}
+
+Map.propTypes = {
+  google: React.PropTypes.object,
+  zoom: React.PropTypes.number,
+  initialCenter: React.PropTypes.object
 }
