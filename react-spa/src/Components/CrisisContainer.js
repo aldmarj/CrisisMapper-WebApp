@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import CrisisMap from './CrisisMap'
-import CrisisNavBar from './CrisisNavBar'
 import { fetchTweets } from '../Services/TwitterAPI'
 import { GoogleApiWrapper } from 'google-maps-react'
 
@@ -18,7 +17,6 @@ class CrisisContainer extends Component {
       render() {
         return (
           <div className="CrisisContainer">
-            <CrisisNavBar/>
             <div className="wrapper">
               <Route path="/" render={(props) => <CrisisMap google={this.props.google} tweets={this.state.tweets} {...props}/>}/>
             </div>
