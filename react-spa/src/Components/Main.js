@@ -22,9 +22,7 @@ class Main extends Component {
         <div>
           <h1>Crisis Mapper</h1>
           <Menu pointing secondary>
-          <Menu.Item exact to="/" name='Home' active={activeItem === 'Crisis Mapping'} onClick={this.handleItemClick}>
-            <NavLink exact to="/"/>
-          </Menu.Item>
+          <Menu.Item exact to="/" name='Home' active={activeItem === 'Crisis Mapping'} onClick={this.handleItemClick}/>
           <Menu.Item to="/crisisMap" name='Crisis Map' active={activeItem === 'Crisis Map'} onClick={this.handleItemClick} />
           <Menu.Item to="/dashboard" name='Dashboard' active={activeItem === 'Dashboard'} onClick={this.handleItemClick} />
           <Menu.Menu position='right'>
