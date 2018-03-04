@@ -1,21 +1,29 @@
-import React, { Component } from "react";
- 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        <h2>HELLO</h2>
-        <p>Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue
-        nec molestie. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
- 
-        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
-      </div>
-    );
-  }
-}
+import React from 'react'
+import { Header, Icon, Image, Input, Grid, Segment } from 'semantic-ui-react'
+
+const Home = () => (
+  <div>
+      <Grid centered columns={2}>
+      <Grid.Column>
+      <Grid.Row>
+          <Header as='h2' icon textAlign='center'>
+          <Icon name='bullhorn' circular />
+          <Header.Content>
+            Crisis Mapper
+            <Header as='h3' textAlign='center'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Header>
+          </Header.Content>
+        </Header>
+      </Grid.Row>
+      </Grid.Column>
+      <Grid.Row>
+        <Grid.Column centered>
+          <Input icon='search' placeholder='Search...' />
+        </Grid.Column>
+      </Grid.Row>
+    </Grid>
+  </div>
+)
  
 export default Home;
