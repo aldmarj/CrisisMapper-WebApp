@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import CrisisMap from './CrisisMap'
+import CrisisNavBar from './CrisisNavBar'
 import { fetchTweets } from '../Services/TwitterAPI'
 import { GoogleApiWrapper } from 'google-maps-react'
 
-class CrisisContainer extends Component {
+class CrisisContainer extends Component { 
     state = {
         tweets: []
       }
@@ -17,7 +18,7 @@ class CrisisContainer extends Component {
       render() {
         return (
           <div className="CrisisContainer">
-            <h1> Crisis Mapper</h1>
+            <CrisisNavBar/>
             <div className="wrapper">
               <Route path="/" render={(props) => <CrisisMap google={this.props.google} tweets={this.state.tweets} {...props}/>}/>
             </div>
