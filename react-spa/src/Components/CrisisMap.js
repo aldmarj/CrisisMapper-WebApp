@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
 
-export default class EarthquakesMap extends Component {
+export default class CrisisMap extends Component {
+  
     componentDidUpdate(prevProps, prevState) {
       if (prevProps.google !== this.props.google || prevProps.tweets !== this.props.tweets) {
         this.loadMap();
@@ -17,8 +19,8 @@ export default class EarthquakesMap extends Component {
           const node = ReactDOM.findDOMNode(mapRef);
     
           const mapConfig = Object.assign({}, {
-            center: {lat: 0, lng: 180},
-            zoom: 2,
+            center: {lat:40.730610 , lng:-73.935242 },
+            zoom: 10,
             gestureHandling: "cooperative",
             mapTypeId: 'terrain'
           })
@@ -52,13 +54,15 @@ export default class EarthquakesMap extends Component {
     
       render() {
         const style = {
-          width: '85vw',
+          width: '100%',
           height: '75vh'
         }
     
         return (
           <div ref="map" style={style}>
-            loading map...
+             <Dimmer active>
+              <Loader content='Loading' />
+            </Dimmer>
           </div>
         )
       }

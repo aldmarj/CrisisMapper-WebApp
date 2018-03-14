@@ -19,7 +19,7 @@ const Home = () => (
       </Grid.Column>
       <Grid.Row>
         <Grid.Column centered>
-          <Input icon='search' placeholder='Search...' />
+        <Input fluid icon='search' placeholder='Search...' />
         </Grid.Column>
       </Grid.Row>
     </Grid>

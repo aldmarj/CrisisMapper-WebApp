@@ -1,8 +1,12 @@
 import React from 'react'
 import { Card, Feed } from 'semantic-ui-react'
+const style = {
+    width: '100%'
+  }
 
 const Traffic = () => (
-  <Card>
+  
+  <Card style={style}>
     <Card.Content>
       <Card.Header>
         Recent Traffic Activity
